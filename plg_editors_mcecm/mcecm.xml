@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3" type="plugin" group="editors" method="upgrade">
+	<name>Editor - MCECM</name>
+	<version>1.0</version>
+	<creationDate>October 2014</creationDate>
+	<description>TinyMCE and CodeMirror editors combined</description>
+	<author>Konstantin Karzanov</author>
+	<authorEmail>konskar@free.fr</authorEmail>
+	<authorUrl>http://konskar.free.fr</authorUrl>
+	<files>
+		<filename plugin="mcecm">mcecm.php</filename>
+		<filename>mcecm.js</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="content_css"
+					type="text"
+					default="template.css"
+					label="Content CSS"
+					description="Point to a file in the CSS folder of the template"/>
+				<field name="editor_css"
+					type="text"
+					default="mcecm.css"
+					label="Editor CSS"
+					description="Point to a file in the CSS folder of the template"/>
+				<field name="editor_js" type="text" default="mcecm.js"
+					label="Editor JS"
+					description="Point to a file in the JS folder of the template"/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

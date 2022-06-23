@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.0" group="content" method="upgrade">
+	<name>Content - Image Gallery</name>
+	<version>1.0</version>
+	<creationDate>October 2013</creationDate>
+	<description>Turn any folder of images into image gallery</description>
+	<author>Konstantin Karzanov</author>
+	<authorEmail>konskar@free.fr</authorEmail>
+	<authorUrl>http://konskar.free.fr</authorUrl>
+	<files>
+		<filename plugin="imagegallery">imagegallery.php</filename>
+		<folder>tmpl</folder>
+	</files>
+</extension>
