@@ -1,0 +1,29 @@
+.topbottomX(@index: @gridColumns) when (@index >= 0) {
+	.top-@{index} {
+		margin-top: @baseLineHeight * 0.5 * @index;
+	}
+	.bottom-@{index} {
+		margin-bottom: @baseLineHeight * 0.5 * @index;
+	}
+	.topbottomX(@index - 1);
+}
+.topbottomX();
+
+.colX(@columnname, @columnwidth, @gutterwidth, @columns: @gridColumns) when (@columns > 0) {
+	.col-@{columnname}-@{columns} {
+		width: (@columnwidth * @columns) + (@gutterwidth * (@columns - 1));
+	}
+	.col-@{columnname}-offset-@{columns} {
+		margin-left: (@columnwidth * @columns) + (@gutterwidth * (@columns + 1));
+	}
+	.colX(@columnname, @columnwidth, @gutterwidth, @columns - 1);
+}
+@media (min-width: 768px) and (max-width: 979px) {
+	.colX(sm, @gridColumnWidth768, @gridGutterWidth768);
+}
+@media (min-width: 1200px) and (max-width: 1599px) {
+	.colX(lg, @gridColumnWidth1200, @gridGutterWidth1200);
+}
+@media (min-width: 1600px) {
+	.colX(hd, @gridColumnWidth1600, @gridGutterWidth1600);
+}

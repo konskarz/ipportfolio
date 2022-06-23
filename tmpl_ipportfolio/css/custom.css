@@ -1,0 +1,92 @@
+/*** framework ***/
+@import url(template.css);
+
+/*** type ***/
+@import url('//fonts.googleapis.com/css?family=Roboto:100,300,400&subset=cyrillic');
+@import url(../fonts/ip_iconsregular.css);
+body,
+input,
+button,
+select,
+textarea,
+dt {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+.banner-caption h1,
+.item-page .intro {
+	font-weight: 100;
+}
+.ipicon {
+	font-family: ip_iconsregular;
+}
+.ippager [class^="icon-"]:before {
+	font-family: ip_iconsregular;
+	font-size: 30px;
+}
+.ippager .icon-arrow-left:before {
+	content: "\4D";
+}
+.ippager .icon-arrow-right:before {
+	content: "\4E";
+}
+.header .nav,
+.tracklist dt,
+.carousel-controls {
+	font-size: 12px;
+}
+.item-page h3,
+.footer h3 {
+	font-weight: 400;
+	font-size: 21px;
+}
+.item-page .intro {
+	font-size: 40px;
+	line-height: 1.5;
+}
+.banner-caption h1 {
+	font-size: 110px;
+	line-height: 1;
+}
+@media (max-width: 767px) {
+	.item-page .intro {
+		font-size: 29px;
+	}
+	.banner-caption h1 {
+		font-size: 49px;
+		line-height: 1.2;
+	}
+}
+@media (min-width: 768px) and (max-width: 979px) {
+	.banner-caption h1 {
+		font-size: 80px;
+	}
+}
+@media (min-width: 1600px) {
+	.item-page .intro {
+		font-size: 42px;
+	}
+	.banner-caption h1 {
+		font-size: 130px;
+	}
+}
+
+/*** base ***/
+.header .pull-left a,
+.carousel-controls a {
+	padding-right: 0.75em;
+}
+.header .pull-right a {
+	padding-left: 0.75em;
+}
+
+/*** main ***/
+@media (min-width: 1200px) {
+	.item-page p,
+	.tracklist {
+		max-width: 41em;
+	}
+	.item-page .intro {
+		max-width: none;
+	}
+}

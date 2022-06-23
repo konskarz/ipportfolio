@@ -1,0 +1,278 @@
+// mixins
+.inline-block {
+	display: inline-block;
+	.ie7-inline-block();
+}
+.inline-list(@margin: 0) {
+	margin: @margin;
+	list-style: none;
+	li {
+		.inline-block();
+	}
+}
+
+// base
+a {
+	.transition(color 0.4s);
+	&.active {
+		cursor: default;
+	}
+}
+::-moz-selection {
+	background-color: @linkColorHover;
+}
+::selection {
+	background-color: @linkColorHover;
+}
+
+// header
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1010;
+	padding: @baseLineHeight;
+	&.invert {
+		background-color: white;
+	}
+	&.collapsed {
+		visibility: hidden;
+	}
+	&.collapsed:hover,
+	&.collapsed.invert {
+		visibility: visible;
+	}
+	.nav {
+		float: left;
+		.inline-list();
+	}
+	.nav li a:hover,
+	.nav li a:focus {
+		background-color: transparent;
+	}
+}
+
+// banner
+html,
+body {
+	height: 100%;
+}
+.banner {
+	position: relative;
+	height: 80%;
+	background: center center no-repeat;
+	.background-size(cover);
+	@media (min-device-width: 1025px) {
+		background-attachment: fixed;
+	}
+	iframe {
+		.embed-item();
+	}
+}
+.banner-caption {
+	position: absolute;
+	top: auto;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.banner-caption h1 {
+	margin-bottom: @baseLineHeight * 3.5;
+	@media (max-width: 767px) {
+		margin-bottom: @baseLineHeight * 2;
+	}
+}
+
+// main
+.item-page.container,
+.front-end.container {
+	margin-top: @baseLineHeight * 3.5;
+	margin-bottom: @baseLineHeight * 3;
+	@media (max-width: 767px) {
+		margin-top: @baseLineHeight * 2;
+	}
+}
+.item-page {
+	p,
+	.image-container,
+	.embed-container,
+	.carousel {
+		margin-bottom: @baseLineHeight * 3.5;
+	}
+	.last {
+		margin-bottom: 0;
+	}
+	p a, td a, dd a {
+		border-bottom: 1px solid @linkColorHover;
+	}
+	.ipicon a {
+		border-bottom-style: none;
+	}
+}
+.tracklist {
+	h3 {
+		margin-top: 0;
+	}
+	dl {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	dd {
+		margin-left: auto;
+		margin-bottom: @baseLineHeight;
+	}
+}
+.credits {
+	width: 100%;
+	border-collapse: separate;
+	td {
+		width: 50%;
+		vertical-align: top;
+		padding-top: @baseLineHeight * 0.5;
+		padding-right: @baseLineHeight * 0.5;
+		padding-bottom: @baseLineHeight * 0.5 - 1px;
+		border-bottom: 1px solid @linkColorHover;
+	}
+	.last td {
+		border-bottom-style: none;
+	}
+}
+.carousel-image {
+	.embed-container();
+	img {
+	    .embed-image();
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-webkit-user-drag: none;
+		user-drag: none;
+	}
+}
+@media (max-width: 979px) {
+	.carousel-image-narrow {
+		.embed-ratio(1, 1);
+	}
+}
+.carousel .item {
+	padding-bottom: @baseLineHeight * 3;
+}
+.carousel-caption {
+	// bootstrap: absolute bottom of item
+	height: @baseLineHeight;
+	padding: 0;
+	background-color: transparent;
+	@media (max-width: 767px) {
+		position: absolute;
+	}
+	p {
+		margin-bottom: 0;
+		color: @textColor;
+	}
+}
+.carousel-controls {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	bottom: @baseLineHeight;
+	line-height: @baseLineHeight * 1.5;
+	a {
+		.inline-block();
+	}
+}
+.carousel-indicators {
+	top: auto;
+	right: auto;
+	.active {
+		color: @linkColorHover;
+		background-color: transparent;
+	}
+}
+.carousel-fade {
+	.item {
+		.opacity(0);
+		.transition(opacity 0.4s);
+	}
+	.active,
+	.next.left,
+	.prev.right {
+		.opacity(100);
+	}
+	.active.left,
+	.active.right {
+		left: 0;
+		z-index: 1;
+		.opacity(0);
+	}
+	.carousel-controls {
+		z-index: 2;
+	}
+}
+
+// footer
+.category-module {
+	padding-top: @baseLineHeight * 2.5;
+	padding-bottom: @baseLineHeight * 2.5;
+}
+.category-module a {
+	.transition(opacity 0.4s);
+	&:hover,
+	&:focus,
+	&.active {
+		.opacity(7);
+	}
+}
+.thumbnails {
+	margin-bottom: 0;
+	li {
+		text-align: center;
+	}
+}
+.xwidth {
+	max-width: @thumbGridMaxWidth;
+	.inline-list(0 auto)
+}
+.xwidth li {
+	.square(@thumbGridColumnWidth);
+	padding: 0 @baseLineHeight / 2 @baseLineHeight;
+	@media (max-width: 767px) {
+		.square(auto);
+		max-width: @thumbGridColumnWidth;
+	}
+}
+
+// home
+.itemid-101 {
+	.brand {
+		color: @textColor;
+		cursor: default;
+	}
+	.item-page.container {
+		margin-bottom: 0;
+	}
+	.footer h3 {
+		display: none;
+	}
+}
+
+// responsive
+@media (max-width: 767px) {
+	.header {
+		padding: 1em;
+	}
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.container,
+	.wide767 .carousel-caption {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+	.wide767 {
+		margin-left: -1em;
+		margin-right: -1em;
+		width: auto;
+	}
+}

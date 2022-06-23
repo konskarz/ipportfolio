@@ -1,0 +1,48 @@
+.embed-ratio(@width: 16, @height: 9) {
+	padding-bottom: @height / @width * 100%;
+}
+.embed-containerX(@width, @height) {
+	.embed-container-@{width}by@{height} {
+		.embed-ratio(@width, @height);
+	}
+}
+.embed-container {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	.embed-ratio();
+}
+.embed-item {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.embed-image {
+    position: absolute;
+    top: 0;
+	bottom: 0;
+    left: 0;
+	right: 0;
+	margin: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+.embed-container iframe {
+	.embed-item();
+}
+.embed-containerX(17, 10);
+.embed-containerX(5, 3);
+.embed-containerX(16, 10);
+.embed-containerX(3, 2);
+.embed-containerX(14, 10);
+.embed-containerX(4, 3);
+.embed-containerX(1, 1);
+.embed-containerX(3, 4);
+.embed-containerX(10, 14);
+.embed-containerX(210, 297);
+.embed-containerX(2, 3);
+.embed-containerX(3, 5);

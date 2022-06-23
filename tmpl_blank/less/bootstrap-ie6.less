@@ -1,0 +1,50 @@
+* html {
+	img {
+		width: 100%;
+		height: auto;
+	}
+	.active {
+		background: transparent;
+	}
+	.row,
+	.thumbnails {
+		position: relative;
+	}
+	.span12,
+	.span11,
+	.span10,
+	.span9,
+	.span8,
+	.span7,
+	.span6,
+	.span5,
+	.span4,
+	.span3,
+	.span2,
+	.span1 {
+		float: left;
+		display: inline;
+	  margin-left: @gridGutterWidth;
+	}
+	.carousel,
+	.carousel-caption {
+		width: 100%;
+	}
+	.carousel .item {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+	a.dropdown-toggle {
+		display: none;
+	}
+	.dropdown-menu {
+		display: block;
+		border: none;
+	}
+	.pull-right .dropdown-menu {
+		right: 0;
+		left: auto;
+	}
+}

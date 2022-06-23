@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="template" client="site">
+	<name>blank</name>
+	<version>1.0</version>
+	<creationDate>9/27/2013</creationDate>
+	<description>Blank template for Joomla!</description>
+	<author>Konstantin Karzanov</author>
+	<authorEmail>konskar@free.fr</authorEmail>
+	<authorUrl>http://konskar.free.fr</authorUrl>
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>css</folder>
+		<folder>fonts</folder>
+		<folder>html</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>less</folder>
+	</files>
+	<positions>
+		<position>position-0</position>
+		<position>position-1</position>
+		<position>position-2</position>
+		<position>position-7</position>
+	</positions>
+</extension>
