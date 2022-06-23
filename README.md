@@ -1,5 +1,7 @@
-# ipportfolio
+# ipPortfolio
 Designer portfolio site with Joomla
+
+2014, Vienna
 
 Creating template from design mockup
 ## Plugins
